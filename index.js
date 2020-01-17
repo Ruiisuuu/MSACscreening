@@ -36,9 +36,10 @@ document.addEventListener('keydown', (e) =>{
 
 document.getElementById('textStroke').onchange = (e) => {
     const div = document.getElementById('resultDiv');
-    const body = document.getElementById('body');
+    const f = document.getElementById('textColor');
+    const color = f.options[f.selectedIndex].text;
     if(e.target.checked){
-        if(body.style.color === "#FFFFFF"){
+        if(color === "White"){
             div.classList.remove('whiteStroke');
             div.classList.add('blackStroke');
         } else {
