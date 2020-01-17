@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Starting soon...</title>
+    <style>
+        .bg{
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .whiteStroke {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+        }
+        .blackStroke {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body id="body" style="background-color: rgb(218, 103, 103);">
+    <div id="inputDiv" class="mt-5 container">
+        <p class="display-1 m-5 text-center">MSAC Screening</p>
+        <div>
+            <p>Controls : &#8592;/&#8594; to switch between settings ; &#8593;/&#8595; to offset bg image</p>
+            <label for="gif_link">Gif background:</label>
+            <div class="input-group">
+                <input class="form-control" type="text" id="gifLink" name="gif_link" placeholder="Link to gif...">
+            </div>
+            <div class="input-group form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="stretchbg" id="strechBox">
+                <label for="strechbg" class="form-check-label">Fit to screen</label>
+            </div>
+            <label for="start_time">Start time:</label>
+            <div class="input-group mb-3">
+                <input class="form-control" type="time" id="startTime" name="start_time">
+            </div>
+            <label for="dinner">Dinner text:</label>
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" id="dinnerInput" name="dinner" placeholder="What's for dinner?">
+                <select class="custom-select" id="dinnerColor">
+                    <option value="#000000" selected>Black</option>
+                    <option value="#FFFFFF">White</option>
+                    <option value="#FF00FF">Pink</option>
+                    <option value="#FF0000">Red</option>
+                    <option value="#800080">Purple</option>
+                    <option value="#0000FF">Blue</option>
+                    <option value="#00FF00">Green</option>
+                    <option value="#FFFF00">Yellow</option>
+                </select>
+            </div>
+            <label for="textColor">Other text font:</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="textFont">
+                    <option selected>Font...</option>
+                    <option value="1">Times New Roman</option>
+                    <option value="2">Georgia</option>
+                    <option value="3">Arial</option>
+                    <option value="4">Verdana</option>
+                    <option value="5">Courier New</option>
+                    <option value="6">Lucida Console</option>
+                </select>
+                <select class="custom-select" id="textColor">
+                    <option value="#000000" selected>Black</option>
+                    <option value="#FFFFFF">White</option>
+                    <option value="#FF00FF">Pink</option>
+                    <option value="#FF0000">Red</option>
+                    <option value="#800080">Purple</option>
+                    <option value="#0000FF">Blue</option>
+                    <option value="#00FF00">Green</option>
+                    <option value="#FFFF00">Yellow</option>
+                </select>
+            </div>
+            <div class="input-group form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="textStroke" id="textStroke">
+                <label for="textStroke" class="form-check-label">Text outline:</label>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="makeResult()">Apply</button>
+        </div>
+    </div>
+    <div id="resultDiv" class="m-5 d-none col">
+        <div class="row display-1">
+            <p><img class="rounded-circle" style="width:10rem;" src="msac.png" alt="Cute"> Starting in : <span id="countdown"></span></p>
+        </div>
+        <div class="row">
+            <div class="h-25 fixed-bottom display-4 p-2 d-flex flex-column">
+                <p>Dinner tonight: <span id="dinnerText"></span></p>
+                <p>Notify an exec if you'd like to join!</p>
+            </div>
+        </div>
+        
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
